@@ -1,0 +1,9 @@
+Post List
+
+<div *ngIf="posts | async; let posts; else loading">
+    <app-post></app-post>
+</div>
+<ng-template #loading>
+    <md-spinner></md-spinner>
+</ng-template>
+

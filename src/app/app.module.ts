@@ -10,18 +10,39 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+import {
+    MdButtonModule,
+    MdCheckboxModule,
+    MdCardModule,
+    MdListModule,
+    MdCoreModule,
+    MdProgressSpinnerModule
+} from '@angular/material';
+import { PostComponent } from './post/post-item/post.component';
+import { PostListComponent } from './post/post-list/post-list.component';
+import { PostService } from './shared/post/post.service';
+import { UserService } from './shared/user/user.service';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PostComponent,
+    PostListComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MdButtonModule,
+    MdCheckboxModule,
+    MdCardModule,
+    MdListModule,
+    MdCoreModule,
+    MdProgressSpinnerModule
   ],
-  providers: [],
+  providers: [PostService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
